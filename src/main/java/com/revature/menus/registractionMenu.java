@@ -1,10 +1,45 @@
 package com.revature.menus;
 
-public class registractionMenu {
-	
+import java.util.Scanner;
+
+import com.revature.models.User;
+
+public class registractionMenu implements Menu {
+
 	private Menu welcomeMenu;
 	private Menu nextMenu;
+
+
+	public Menu enhancedMenu() {
+		// TODO Auto-generated method stub
+		return nextMenu;
+		
+	}
+	public void displayOptions() {
+		User user = new User();
+		Scanner in = new Scanner(System.in);
+		System.out.println("PLease create a new username: ");
+		String username = in.nextLine();
+		System.out.println("PLease create a new password: ");
+		String password = in.nextLine();
+		
+		nextMenu = welcomeMenu;
+	}
 	
+	public Menu previousMenu() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public registractionMenu() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public registractionMenu(Menu welcomeMenu, Menu nextMenu) {
+		super();
+		this.welcomeMenu = welcomeMenu;
+	}
 	
 	public Menu getWelcomeMenu() {
 		return welcomeMenu;
@@ -15,8 +50,11 @@ public class registractionMenu {
 	public Menu getNextMenu() {
 		return nextMenu;
 	}
-	public void setNextMenu(Menu nextMenu) {
-		this.nextMenu = nextMenu;
+	public void setScanner(Scanner in) {
+		// TODO Auto-generated method stub
+		
 	}
+	
+
 
 }

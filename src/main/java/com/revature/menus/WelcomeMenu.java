@@ -8,39 +8,32 @@ public class WelcomeMenu implements Menu {
 	private Menu registractionMenu;
 	private Menu loginMenu;
 
-	public  WelcomeMenu() {
-		super();
-	}
+	
+	public Menu enhancedMenu() {
+		return nextMenu;
+		// TODO Auto-generated method stub
 
-	public WelcomeMenu( Menu loginMenu, Menu registractionMenu) {
-		super();
-		this.registractionMenu = registractionMenu;
-		this.loginMenu = loginMenu;
 	}
-
 	
 	public void displayOptions(){
 
 		System.out.println("Welcome to AndrewQandah Bank");
 		System.out.println("*****************************");
-		System.out.println("Please enter: \n0 to Register \nor \n1 to Sign-in");
 		Scanner in = new Scanner(System.in);
-		int answer = in.nextInt();
+		System.out.println("Please enter: \nregister to Register \nor \nsignin to Sign-in");
+		String answer = in.nextLine();
 
-		if (1 ==answer){	
+		if ("signin".equals(answer)){	
 			nextMenu = loginMenu;
-		} else if (1 == answer) {
+		} else if ("register".equals(answer)) {
 			nextMenu = registractionMenu;
 		} else { System.out.println("Invalid input");
-		setNextMenu(registractionMenu);
+		  	nextMenu = this;
 		}
+	
 	}
 
-	public Menu enhancedMenu() {
-		return loginMenu;
-		// TODO Auto-generated method stub
-
-	}
+	
 
 	public  Menu previousMenu() {
 		return null;
@@ -53,8 +46,23 @@ public class WelcomeMenu implements Menu {
 
 	public void setNextMenu(Menu nextMenu) {
 		this.nextMenu = nextMenu;
-	}}
+	}
+	
+	public  WelcomeMenu() {
+		super();
+	}
 
+	public WelcomeMenu( Menu loginMenu, Menu registractionMenu) {
+		super();
+		this.registractionMenu = registractionMenu;
+		this.loginMenu = loginMenu;
+}
 
+	public void setScanner(Scanner in) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
 
 
