@@ -16,19 +16,21 @@ public class WelcomeMenu implements Menu {
 	}
 	
 	public void displayOptions(){
-
+		System.out.println("**************************************************************************");
 		System.out.println("Welcome to AndrewQandah Bank");
-		System.out.println("*****************************");
+		System.out.println("**************************************************************************");
 		Scanner in = new Scanner(System.in);
-		System.out.println("Please enter: \nregister to Register \nor \nsignin to Sign-in");
+		System.out.println("Please enter: B to Register or A to Sign-in");
+		System.out.println("**************************************************************************");
 		String answer = in.nextLine();
 
-		if ("signin".equals(answer)){	
+		if ("A".equals(answer)){	
 			nextMenu = loginMenu;
-		} else if ("register".equals(answer)) {
+		} else if ("B".equals(answer)) {
 			nextMenu = registractionMenu;
 		} else { System.out.println("Invalid input");
 		  	nextMenu = this;
+		  	
 		}
 	
 	}
