@@ -6,7 +6,7 @@ public class Driver {
 
 	public static void main(String[] args) {
 		WelcomeMenu welcomeMenu = new WelcomeMenu();
-		welcomeMenu.DisplayOption();
+		welcomeMenu.displayOptions();
 
 	}
 
