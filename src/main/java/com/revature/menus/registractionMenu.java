@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import com.revature.models.User;
 
-public class registractionMenu implements Menu {
+public class registractionMenu implements Menu { // i see the spilling error
 
 	private Menu welcomeMenu;
 	private Menu nextMenu;
@@ -18,9 +18,13 @@ public class registractionMenu implements Menu {
 	public void displayOptions() {
 		User user = new User();
 		Scanner in = new Scanner(System.in);
+		System.out.println("**************************************************************************");
 		System.out.println("PLease create a new username: ");
+		System.out.println("**************************************************************************");
 		String username = in.nextLine();
+		System.out.println("**************************************************************************");
 		System.out.println("PLease create a new password: ");
+		System.out.println("**************************************************************************");
 		String password = in.nextLine();
 		
 		nextMenu = welcomeMenu;

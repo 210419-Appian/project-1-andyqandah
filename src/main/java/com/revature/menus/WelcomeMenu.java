@@ -16,11 +16,11 @@ public class WelcomeMenu implements Menu {
 	}
 	
 	public void displayOptions(){
-		System.out.println("**************************************************************************");
-		System.out.println("Welcome to AndrewQandah Bank");
+		System.out.println("\n");
+		System.out.println("Welcome to Andrew Qandah's Bank");
 		System.out.println("**************************************************************************");
 		Scanner in = new Scanner(System.in);
-		System.out.println("Please enter: B to Register or A to Sign-in");
+		System.out.println("Please enter : A to Sign-in or B to Register");
 		System.out.println("**************************************************************************");
 		String answer = in.nextLine();
 
@@ -30,26 +30,18 @@ public class WelcomeMenu implements Menu {
 			nextMenu = registractionMenu;
 		} else { System.out.println("Invalid input");
 		  	nextMenu = this;
-		  	
 		}
-	
 	}
-
-	
 
 	public  Menu previousMenu() {
 		return null;
-
 	}
-
 	public Menu getNextMenu() {
 		return nextMenu;
 	}
-
 	public void setNextMenu(Menu nextMenu) {
 		this.nextMenu = nextMenu;
 	}
-	
 	public  WelcomeMenu() {
 		super();
 	}

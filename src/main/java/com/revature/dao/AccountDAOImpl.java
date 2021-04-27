@@ -57,14 +57,13 @@ public AccountDAOImpl() {
 		char option = '\0';
 		Scanner in = new Scanner(System.in);
 
-		System.out.println(" Welcome " + firstName + " " + lastName );
-		System.out.println("User ID: " + userId);
-		System.out.println("\n");
+//		System.out.println("Welcome " + firstName + " " + lastName );
+//		System.out.println("User ID: " + userId);
+//		System.out.println("\n");
 		System.out.println("**************************************************************************");
-
-		System.out.println("Please enter a letter from A to E based on the rquested service as follow" );
-		System.out.println("\n");
+		System.out.println("Please enter a letter from A to E based on the list below:" );
 		System.out.println("**************************************************************************");
+		System.out.println("\n");
 		
 		System.out.println("A to Check Balance");
 		System.out.println("B to Deposit");
@@ -97,6 +96,7 @@ public AccountDAOImpl() {
 				double amount = in.nextDouble();
 				deposit(amount);
 				System.out.println("You deposited $" + amount + "\nYour new Balance is $"+balance );
+				System.out.println("**************************************************************************");
 				System.out.println("\n");
 				break;
 
