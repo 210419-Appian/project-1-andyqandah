@@ -7,7 +7,7 @@
   <properties>
 		<maven.compilar.source> 1.8</maven.compilar.source>
 		<maven.compilar.target> 1.8</maven.compilar.target>
-	</properties>
+ </properties>
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
 		<dependency>
