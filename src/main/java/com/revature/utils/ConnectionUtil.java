@@ -14,20 +14,20 @@ public class ConnectionUtil {
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		
 		String url = "jdbc:postgresql://appian-2021.caxwqy9zrvhv.us-east-2.rds.amazonaws.com:5432/postgres";
 		String username = "postgres"; 
 		String password = "Ling5128"; 
 		
 		return DriverManager.getConnection(url, username, password);
-	}
-
-	public static void main(String[] args) {
-try(Connection conn=ConnectionUtil.getConnection()){
-	System.out.println("Connection successful.");		
-}catch(SQLException e) {	e.printStackTrace();
-	}}}
-	
+	}}
+//
+//	public static void main(String[] args) {
+//try(Connection conn=ConnectionUtil.getConnection()){
+//	System.out.println("Connection successful.");		
+//}catch(SQLException e)
+//{	e.printStackTrace();
+//	}}}
+//	
 	
 
 

@@ -10,55 +10,63 @@ public class Account implements Serializable{
 	
 	private int accountId; 
 	private double balance;  
-	private AccountStatus status;
-	private AccountType type;
+	private int status;
+	private int type;
+	private int user;
 	
-	public Account(int accountId, double balance, AccountStatus status, AccountType type) {
-		super();
-		this.accountId = accountId;
-		this.balance = balance;
-		this.status = status;
-		this.type = type;
-	}
 
 	public Account() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-
+	public Account(int accountId, double balance, int status, int type, int user) {
+		super();
+		this.accountId = accountId;
+		this.balance = balance;
+		this.status = status;
+		this.type = type;
+		this.user = user;
+	}
+	public Account(double balance, int status, int type, int user) {
+		super();
+		this.balance = balance;
+		this.status = status;
+		this.type = type;
+		this.user = user;
+	}
 	public int getAccountId() {
 		return accountId;
 	}
-
 	public void setAccountId(int accountId) {
 		this.accountId = accountId;
 	}
-
 	public double getBalance() {
 		return balance;
 	}
-
 	public void setBalance(double balance) {
 		this.balance = balance;
 	}
-
-	public AccountStatus getStatus() {
+	public int getStatus() {
 		return status;
 	}
-
-	public void setStatus(AccountStatus status) {
+	public void setStatus(int status) {
 		this.status = status;
 	}
-
-	public AccountType getType() {
+	public int getType() {
 		return type;
 	}
-
-	public void setType(AccountType type) {
+	public void setType(int type) {
 		this.type = type;
 	}
+	public int getUser() {
+		return user;
+	}
+	public void setUser(int user) {
+		this.user = user;
+	}
 
+
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -67,11 +75,11 @@ public class Account implements Serializable{
 		long temp;
 		temp = Double.doubleToLongBits(balance);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		result = prime * result + ((status == null) ? 0 : status.hashCode());
-		result = prime * result + ((type == null) ? 0 : type.hashCode());
+		result = prime * result + status;
+		result = prime * result + type;
+		result = prime * result + user;
 		return result;
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -85,22 +93,21 @@ public class Account implements Serializable{
 			return false;
 		if (Double.doubleToLongBits(balance) != Double.doubleToLongBits(other.balance))
 			return false;
-		if (status == null) {
-			if (other.status != null)
-				return false;
-		} else if (!status.equals(other.status))
+		if (status != other.status)
 			return false;
-		if (type == null) {
-			if (other.type != null)
-				return false;
-		} else if (!type.equals(other.type))
+		if (type != other.type)
+			return false;
+		if (user != other.user)
 			return false;
 		return true;
 	}
-
 	@Override
 	public String toString() {
 		return "Account [accountId=" + accountId + ", balance=" + balance + ", status=" + status + ", type=" + type
-				+ "]";
+				+ ", user=" + user + "]";
 	}
+	
+	
 }
+	
+
