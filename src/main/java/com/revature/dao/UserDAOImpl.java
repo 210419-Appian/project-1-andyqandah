@@ -177,9 +177,9 @@ try(Connection conn = ConnectionUtil.getConnection()){
 			statement.setString(1, username);
 			
 			ResultSet result = statement.executeQuery();
-			
+			User u = new User();
 			while(result.next()) {
-				User u = new User();
+			
 				
 				u.setUserId(result.getInt("user_id"));
 				u.setUsername(result.getString("user_name"));
@@ -189,9 +189,9 @@ try(Connection conn = ConnectionUtil.getConnection()){
 				u.setEmail(result.getString("user_email"));
 				u.setRole(result.getInt("role_id"));
 				
-		return u;
+	
 	}
-			
+			return u;	
 			} catch(SQLException e) {
 				e.printStackTrace();
 			}
@@ -238,6 +238,7 @@ try (Connection conn = ConnectionUtil.getConnection()) {
 			
 			statement.setString(1, username); 
 			ResultSet result = statement.executeQuery();
+			
 			User user = new User();
 			
 			while(result.next()) {
@@ -250,8 +251,6 @@ try (Connection conn = ConnectionUtil.getConnection()) {
 				user.setLastName(result.getString("user_last_name"));				
 				user.setEmail(result.getString("user_email"));
 				user.setRole(result.getInt("role_id"));
-				
-				
 			}			
 			
 			return user;

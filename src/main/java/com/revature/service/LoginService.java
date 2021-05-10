@@ -12,6 +12,7 @@ public class LoginService {
 	UserDTO uDTO = new UserDTO();
 	public boolean login(String username, String password) {
 		User myUser = uService.findByUsername(username);
+
 		//UserDTO myUser = new UserDTO();
 		if (myUser!= null) {
 			if (myUser.getPassword().equals(password)) {
